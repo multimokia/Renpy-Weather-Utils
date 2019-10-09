@@ -47,6 +47,7 @@ All of these functions are initialized before `init 0`. They're ready to be used
 ## `country_code_lookup`:
 - `dict()`
 - Allows country code to full country name lookups
+
 Structure:
 ```python
 {
@@ -58,6 +59,7 @@ Structure:
 ## `city_lookup`:
 - `dict()`
 - Allows lookups to get all locations of a certain city name.
+
 Structure:
 ```python
 {
