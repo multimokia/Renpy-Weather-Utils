@@ -20,6 +20,7 @@ All of these functions are initialized before `init 0`. They're ready to be used
 
 
 # Globals:
+#### (These exist in the `awc_globals` store)
 ## `owm`:
 - The `openweathermap` object which is used to get weather observations from
 
@@ -46,6 +47,7 @@ All of these functions are initialized before `init 0`. They're ready to be used
 
 
 # Reference Utilities:
+#### (These exist in the `awc_utils` store)
 ## `country_code_lookup`:
 - `dict()`
 - Allows country code to full country name lookups
@@ -107,6 +109,7 @@ Structure:
 
 
 # Functions:
+#### (These don't have their own store and can be called directly)
 ## `awc_textURL(url)`:
 - When given a url to check, it tests if it's possible to open.
 - If successful, returns `True`. If not, it returns the error code. If no connection, returns `False`.
