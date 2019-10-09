@@ -14,6 +14,8 @@ In order to get weather observations for your desired location, you'll need to e
 
 **NOTE:** It is possible that there are cities missing from `citylookup.txt`. If this is the case, please feel free to submit a pull request adding the location, simply add a line in the form of `city_name,country_code,latitude,longitude,state_or_province` (Your help is appreciated)
 
+**NOTE:** Some `sys.path` manipulation may be needed to import some of these libs.
+
 All of these functions are initialized before `init 0`. They're ready to be used from `init -17`.
 
 
