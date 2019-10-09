@@ -431,7 +431,7 @@ init -19 python:
         Builds the lookup dict for city lookups
         """
         loc_data_dict = dict()
-        lookup_file = renpy.config.gamedir.replace("\\", '/') + "/Submods/Auto Weather Change/Utilities/awc_citylookup.txt"
+        lookup_file = renpy.config.gamedir.replace("\\", '/') + "/Utils/awc_citylookup.txt"
 
         with renpy.file(lookup_file) as loc_dat:
             for line in loc_dat:
