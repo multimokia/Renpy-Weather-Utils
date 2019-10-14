@@ -68,7 +68,7 @@ Structure:
 ```python
 {
     "city_name": [
-        ("country_code", latitude, longitude, state_or_province),
+        ("country_code", latitude, longitude, "state_or_province"),
         ...
     ],
     ...
