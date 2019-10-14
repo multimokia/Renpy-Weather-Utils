@@ -110,7 +110,7 @@ Structure:
 
 # Functions:
 #### (These don't have their own store and can be called directly)
-## `awc_textURL(url)`:
+## `awc_testURL(url)`:
 - When given a url to check, it tests if it's possible to open.
 - If successful, returns `True`. If not, it returns the error code. If no connection, returns `False`.
 
