@@ -27,17 +27,17 @@ All of these functions are initialized before `init 0`. They're ready to be used
 ## `SUN_KW`:
 - Keywords for sun weather.
 
-## `OVERCAST_KW`:
-- Keywords for overcast weather. (**NOTE:** currently unused)
-
-## `RAIN_KW`:
-- Keywords for rain weather.
-
 ## `THUNDER_KW`:
 - Keywords for thunder weather.
 
 ## `SNOW_KW`:
 - Keywords for snow weather.
+
+## `RAIN_RATE_THRESH`:
+- hourly rate threshold to consider weather as rain.
+
+## `OVERCAST_CLOUD_THRESH`:
+- cloud percentage to consider weather as overcast.
 
 ## `BASE_URL`:
 - The base url for the open weather map api requests.
@@ -45,6 +45,13 @@ All of these functions are initialized before `init 0`. They're ready to be used
 ## `weather_offline_timeout`:
 - Stores the `datetime.datetime` of when the `awc_offlineTimerCheck()` function declares you offline.
 
+## `OVERCAST_KW`:
+- Keywords for overcast weather.
+- **NOTE:** Depreciated.
+
+## `RAIN_KW`:
+- Keywords for rain weather.
+- **NOTE:** Depreciated.
 
 # Reference Utilities:
 #### (These exist in the `awc_utils` store)
@@ -164,7 +171,7 @@ Structure:
   - Returned in a list of tuples in the form:
 ```python
 [
-    (city_name, country_code, latitude, longitude, state_or_province),
+    ("city_name", country_code, latitude, longitude, "state_or_province"),
     ...
 ]
 ```
@@ -240,22 +247,27 @@ Structure:
 - `"snow"` for snow weather.
 - (Feel free to change these returns to better suit your game)
 
-## `awc_isSunWeather()`:
+## `awc_isSunWeather(observation=None)`:
+- `observation` - Observation object to check with. If not provided, it is acquired by `awc_getObservation()`
 - Checks if the current weather description or detailed weather description is in the `SUN_KW` global list.
 - `True` if so, `False` otherwise.
 
-## `awc_isOvercastWeather()`:
-- Checks if the current cloud percentage is greater than 50%.
+## `awc_isOvercastWeather(observation=None)`:
+- `observation` - Observation object to check with. If not provided, it is acquired by `awc_getObservation()`
+- Checks if the current cloud percentage is greater than 75%.
 - `True` if so, `False` otherwise.
 
-## `awc_isRainWeather()`:
-- Checks if the current weather description or detailed weather description is in the `RAIN_KW` global list.
+## `awc_isRainWeather(observation=None)`:
+- `observation` - Observation object to check with. If not provided, it is acquired by `awc_getObservation()`
+- Checks if the current rain rate (in millimeters per hour) is >= 3.
 - `True` if so, `False` otherwise.
 
-## `awc_isThunderWeather()`:
+## `awc_isThunderWeather(observation=None)`:
+- `observation` - Observation object to check with. If not provided, it is acquired by `awc_getObservation()`
 - Checks if the current weather description or detailed weather description is in the `THUNDER_KW` global list.
 - `True` if so, `False` otherwise.
 
-## `awc_isSnowWeather()`:
+## `awc_isSnowWeather(observation=None)`:
+- `observation` - Observation object to check with. If not provided, it is acquired by `awc_getObservation()`
 - Checks if the current weather description or detailed weather description is in the `SNOW_KW` global list.
 - `True` if so, `False` otherwise.
