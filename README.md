@@ -271,3 +271,14 @@ Structure:
 - `observation` - Observation object to check with. If not provided, it is acquired by `awc_getObservation()`
 - Checks if the current weather description or detailed weather description is in the `SNOW_KW` global list.
 - `True` if so, `False` otherwise.
+
+## `awc_getTemperature(observation=None, temp="temp")`:
+- Checks the temperature at the player's location.
+- `observation` - Observation object to check with. If not provided, it is acquired by `awc_getObservation()`
+- `temp` - The temperature we want to check. If not provided, it defauls at `"temp"`. Accepts the following values:
+- `"temp_min"` for the min current temperature in the city.
+- `"temp"` for the current temperature.
+- `"temp_max"` for the max current temperature in the city.
+- **NOTE:** `"temp_min"` and `"temp_max"` are optional parameters mean min / max temperature in the city at the current moment
+to see deviation from current temp just for your reference.
+- Returns the temperature in Celsius, depending on the provided temp value.
